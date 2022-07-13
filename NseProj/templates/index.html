@@ -1,0 +1,435 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>P & D</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <div class="container-fluid">
+            <div class="col-md-12 my-4">
+                <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 text-center">
+                    <div class="row" style="border-radius: 10px; background-color: whitesmoke; height: 130px; box-shadow: -3px 3px #666666;">
+                        <div class="col-md-4 my-5">
+                            <h2 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">NIFTY 50</h2>
+                            
+                        </div>
+                        <div class="col-md-4 my-3">
+                          <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">PRICE</h2>
+                          <h2 class="my-3">{{price}}</h2>
+                        </div>
+                        <div class="col-md-4 my-3">
+                            <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">CHANGE %</h2>
+                            <h2 id="per_chg" class="my-3">{{nifty_chg}}%</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+                </div>
+            </div>
+
+    </div>
+
+    <div class="container">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6">
+            <table class="table table-sm table-dark text-center" >
+              <thead style="position:sticky; top:0;">
+                <tr>
+                  <th scope="col">NUM</th>
+                  <th scope="col">SYMBOL</th>
+                  <th scope="col">LTP</th>
+                  <th scope="col">CHANGE %</th>
+                  <th scope="col">POINTS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>HDFCBANK</td>
+                  <td>{{HDFCBANK_LTP}}</td>
+                  <td>{{HDFCBANK_CHG}}%</td>
+                  <td>{{HDFCBANK_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>RELIANCE</td>
+                  <td>{{RELIANCE_LTP}}</td>
+                  <td>{{RELIANCE_CHG}}%</td>
+                  <td>{{RELIANCE_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>INFY</td>
+                  <td>{{INFY_LTP}}</td>
+                  <td>{{INFY_CHG}}%</td>
+                  <td>{{INFY_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>HDFC</td>
+                  <td>{{HDFC_LTP}}</td>
+                  <td>{{HDFC_CHG}}%</td>
+                  <td>{{HDFC_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>ICICIBANK</td>
+                  <td>{{ICICIBANK_LTP}}</td>
+                  <td>{{ICICIBANK_CHG}}%</td>
+                  <td>{{ICICIBANK_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">6</th>
+                  <td>TCS</td>
+                  <td>{{TCS_LTP}}</td>
+                  <td>{{TCS_CHG}}%</td>
+                  <td>{{TCS_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td>KOTAKBANK</td>
+                  <td>{{KOTAKBANK_LTP}}</td>
+                  <td>{{KOTAKBANK_CHG}}%</td>
+                  <td>{{KOTAKBANK_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">8</th>
+                  <td>HUL</td>
+                  <td>{{HUL_LTP}}</td>
+                  <td>{{HUL_CHG}}%</td>
+                  <td>{{HUL_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">9</th>
+                  <td>ITC</td>
+                  <td>{{ITC_LTP}}</td>
+                  <td>{{ITC_CHG}}%</td>
+                  <td>{{ITC_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">10</th>
+                  <td>AXISBANK</td>
+                  <td>{{AXISBANK_LTP}}</td>
+                  <td>{{AXISBANK_CHG}}%</td>
+                  <td>{{AXISBANK_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">11</th>
+                  <td>LT</td>
+                  <td>{{LT_LTP}}</td>
+                  <td>{{LT_CHG}}%</td>
+                  <td>{{LT_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">12</th>
+                  <td>SBIN</td>
+                  <td>{{SBIN_LTP}}</td>
+                  <td>{{SBIN_CHG}}%</td>
+                  <td>{{SBIN_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">13</th>
+                  <td>BAJFINANCE</td>
+                  <td>{{BAJFINANCE_LTP}}</td>
+                  <td>{{BAJFINANCE_CHG}}%</td>
+                  <td>{{BAJFINANCE_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">14</th>
+                  <td>BHARTIARTL</td>
+                  <td>{{BHARTIARTL_LTP}}</td>
+                  <td>{{BHARTIARTL_CHG}}%</td>
+                  <td>{{BHARTIARTL_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">15</th>
+                  <td>ASIANPAINT</td>
+                  <td>{{ASIANPAINT_LTP}}</td>
+                  <td>{{ASIANPAINT_CHG}}%</td>
+                  <td>{{ASIANPAINT_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">16</th>
+                  <td>HCLTECH</td>
+                  <td>{{HCLTECH_LTP}}</td>
+                  <td>{{HCLTECH_CHG}}%</td>
+                  <td>{{HCLTECH_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">17</th>
+                  <td>MARUTI</td>
+                  <td>{{MARUTI_LTP}}</td>
+                  <td>{{MARUTI_CHG}}%</td>
+                  <td>{{MARUTI_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">18</th>
+                  <td>ULTRACEMCO</td>
+                  <td>{{ULTRACEMCO_LTP}}</td>
+                  <td>{{ULTRACEMCO_CHG}}%</td>
+                  <td>{{ULTRACEMCO_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">19</th>
+                  <td>M&M</td>
+                  <td>{{MM_LTP}}</td>
+                  <td>{{MM_CHG}}%</td>
+                  <td>{{MM_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">20</th>
+                  <td>SUNPHARMA</td>
+                  <td>{{SUNPHARMA_LTP}}</td>
+                  <td>{{SUNPHARMA_CHG}}%</td>
+                  <td>{{SUNPHARMA_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">21</th>
+                  <td>TITAN</td>
+                  <td>{{TITAN_LTP}}</td>
+                  <td>{{TITAN_CHG}}%</td>
+                  <td>{{TITAN_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">22</th>
+                  <td>TECHM</td>
+                  <td>{{TECHM_LTP}}</td>
+                  <td>{{TECHM_CHG}}%</td>
+                  <td>{{TECHM_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">23</th>
+                  <td>WIPRO</td>
+                  <td>{{WIPRO_LTP}}</td>
+                  <td>{{WIPRO_CHG}}%</td>
+                  <td>{{WIPRO_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">24</th>
+                  <td>NESTLEIND</td>
+                  <td>{{NESTLEIND_LTP}}</td>
+                  <td>{{NESTLEIND_CHG}}%</td>
+                  <td>{{NESTLEIND_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">25</th>
+                  <td>TATASTEEL</td>
+                  <td>{{TATASTEEL_LTP}}</td>
+                  <td>{{TATASTEEL_CHG}}%</td>
+                  <td>{{TATASTEEL_points}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-md-6">
+            <table class="table table-sm table-dark text-center" style="position:sticky; top:0;">
+              <thead style="position:sticky; top:0;">
+                <tr>
+                  <th scope="col">NUM</th>
+                  <th scope="col">SYMBOL</th>
+                  <th scope="col">LTP</th>
+                  <th scope="col">CHANGE %</th>
+                  <th scope="col">POINTS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">26</th>
+                  <td>BAJAJFINSV</td>
+                  <td>{{BAJAJFINSV_LTP}}</td>
+                  <td>{{BAJAJFINSV_CHG}}%</td>
+                  <td class="clr_chg">{{BAJAJFINSV_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">27</th>
+                  <td>HDFCLIFE</td>
+                  <td>{{HDFCLIFE_LTP}}</td>
+                  <td>{{HDFCLIFE_CHG}}%</td>
+                  <td>{{HDFCLIFE_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">28</th>
+                  <td>POWERGRID</td>
+                  <td>{{POWERGRID_LTP}}</td>
+                  <td>{{POWERGRID_CHG}}%</td>
+                  <td>{{POWERGRID_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">29</th>
+                  <td>GRASIM</td>
+                  <td>{{GRASIM_LTP}}</td>
+                  <td>{{GRASIM_CHG}}%</td>
+                  <td>{{GRASIM_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">30</th>
+                  <td>DRREDDY</td>
+                  <td>{{DRREDDY_LTP}}</td>
+                  <td>{{DRREDDY_CHG}}%</td>
+                  <td>{{DRREDDY_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">31</th>
+                  <td>INDUSINDBK</td>
+                  <td>{{INDUSINDBK_LTP}}</td>
+                  <td>{{INDUSINDBK_CHG}}%</td>
+                  <td>{{INDUSINDBK_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">32</th>
+                  <td>TATAMOTORS</td>
+                  <td>{{TATAMOTORS_LTP}}</td>
+                  <td>{{TATAMOTORS_CHG}}%</td>
+                  <td>{{TATAMOTORS_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">33</th>
+                  <td>ADANIPORTS</td>
+                  <td>{{ADANIPORTS_LTP}}</td>
+                  <td>{{ADANIPORTS_CHG}}%</td>
+                  <td>{{ADANIPORTS_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">34</th>
+                  <td>NTPC</td>
+                  <td>{{NTPC_LTP}}</td>
+                  <td>{{NTPC_CHG}}%</td>
+                  <td>{{NTPC_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">35</th>
+                  <td>BAJAJ-AUTO</td>
+                  <td>{{BAJAJAUTO_LTP}}</td>
+                  <td>{{BAJAJAUTO_CHG}}%</td>
+                  <td>{{BAJAJAUTO_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">36</th>
+                  <td>HINDALCO</td>
+                  <td>{{HINDALCO_LTP}}</td>
+                  <td>{{HINDALCO_CHG}}%</td>
+                  <td>{{HINDALCO_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">37</th>
+                  <td>DIVISLAB</td>
+                  <td>{{DIVISLAB_LTP}}</td>
+                  <td>{{DIVISLAB_CHG}}%</td>
+                  <td>{{DIVISLAB_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">38</th>
+                  <td>JSWSTEEL</td>
+                  <td>{{JSWSTEEL_LTP}}</td>
+                  <td>{{JSWSTEEL_CHG}}%</td>
+                  <td>{{JSWSTEEL_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">39</th>
+                  <td>BRITANNIA</td>
+                  <td>{{BRITANNIA_LTP}}</td>
+                  <td>{{BRITANNIA_CHG}}%</td>
+                  <td>{{BRITANNIA_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">40</th>
+                  <td>CIPLA</td>
+                  <td>{{CIPLA_LTP}}</td>
+                  <td>{{CIPLA_CHG}}%</td>
+                  <td>{{CIPLA_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">41</th>
+                  <td>BPCL</td>
+                  <td>{{BPCL_LTP}}</td>
+                  <td>{{BPCL_CHG}}%</td>
+                  <td>{{BPCL_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">42</th>
+                  <td>SHREECEM</td>
+                  <td>{{SHREECEM_LTP}}</td>
+                  <td>{{SHREECEM_CHG}}%</td>
+                  <td>{{SHREECEM_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">43</th>
+                  <td>HEROMOTOCO</td>
+                  <td>{{HEROMOTOCO_LTP}}</td>
+                  <td>{{HEROMOTOCO_CHG}}%</td>
+                  <td>{{HEROMOTOCO_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">44</th>
+                  <td>ONGC</td>
+                  <td>{{ONGC_LTP}}</td>
+                  <td>{{ONGC_CHG}}%</td>
+                  <td>{{ONGC_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">45</th>
+                  <td>EICHERMOT</td>
+                  <td>{{EICHERMOT_LTP}}</td>
+                  <td>{{EICHERMOT_CHG}}%</td>
+                  <td>{{EICHERMOT_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">46</th>
+                  <td>UPL</td>
+                  <td>{{UPL_LTP}}</td>
+                  <td>{{UPL_CHG}}%</td>
+                  <td>{{UPL_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">47</th>
+                  <td>SBILIFE</td>
+                  <td>{{SBILIFE_LTP}}</td>
+                  <td>{{SBILIFE_CHG}}%</td>
+                  <td>{{SBILIFE_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">48</th>
+                  <td>COALINDIA</td>
+                  <td>{{COALINDIA_LTP}}</td>
+                  <td>{{COALINDIA_CHG}}%</td>
+                  <td>{{COALINDIA_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">49</th>
+                  <td>TATACONSUM</td>
+                  <td>{{TATACONSUM_LTP}}</td>
+                  <td>{{TATACONSUM_CHG}}%</td>
+                  <td>{{TATACONSUM_points}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">50</th>
+                  <td>APOLLOHOSP</td>
+                  <td>{{APOLLOHOSP_LTP}}</td>
+                  <td>{{APOLLOHOSP_CHG}}%</td>
+                  <td>{{APOLLOHOSP_points}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+
+{% endblock body %}
+
